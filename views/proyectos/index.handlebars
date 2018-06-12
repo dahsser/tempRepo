@@ -1,0 +1,14 @@
+<h1>Proyectos registradas</h1>
+{{#each proyectos}}
+  <div class="card card-body mb-2">
+    <h4>{{nombre}}</h4>
+    <p>{{descripcion}}</p>
+    <a class="btn btn-dark btn-block mb-2" href="/proyectos/editar/{{id}}">Editar</a>
+    <form action="/proyectos/{{id}}?_method=DELETE" method="POST">
+      <input type="hidden" name="_method" value="DELETE">
+      <input class="btn btn-danger btn-block" type="submit" value="Delete">
+    </form>
+  </div>
+{{else}}
+  <p>No hay proyectos</p>
+{{/each}}
